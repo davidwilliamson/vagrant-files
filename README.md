@@ -28,17 +28,17 @@ Open a terminal window
 cd ~/Documents/vagrant-files
 cd ubuntu-14-04
 ```
-Check out the `Vagrantfile` in this directory. Some things you may want to change:
+Examine the `Vagrantfile` in this directory. Some things you may want to change:
 
 The line `config.vm.synced_folder "~/Documents", "/Documents"` will make all files in your Mac's `/Users/<your-user-name>/Documents` folder available inside the VM. You may want to change this so only your programming stuff (git repos, etc.) are available inside the VM.
 
 For example, if your programming stuff is located at `/Users/<your-user-name>/Documents/codist`,
 then change the line to be: `config.vm.synced_folder "~/Documents/codist", "/codist"`
 
-Now, checkout the `bootstrap.sh` file in this directory. We use this file to install additional
-packages in our VM.
+Now, examine the `bootstrap.sh` file in this directory. We use this file to install additional
+Ubuntu packages in our VM.
 
-*Note*: If you just want to create a VM with nothing additional installed, comment out either or both of the lines:
+*Note*: If you just want to create an Ubuntu VM with nothing additional installed, comment out either or both of the lines:
 ```bash
 config.vm.provision "docker", images: ["alpine:3.4", "ubuntu:14.04"]
 config.vm.provision :shell, path: "bootstrap.sh"
@@ -98,6 +98,10 @@ vagrant suspend
 # Similar to powering off a traditional computer and wiping its hard drive.
 # All files in the VM are lost.
 vagrant destroy
+```
+To restart the VM:
+```bash
+vagrant up
 ```
 If you change your `Vagrantfile` or the `bootstrap.sh` file, do this to force the VM to use the new definition:
 ```bash
