@@ -77,7 +77,7 @@ mkdir toy-web-site
 echo '<html>Hello from Vagrant</html>' > index.html
 docker run --name my-web-server -v /Documents/toy-web-site:/usr/share/nginx/html:ro -p 80:80 -d nginx
 ```
-Point your browser to http://localhost:8080/
+On your Mac, point your browser to [http://localhost:8080](http://localhost:8080)
 
 On the Mac, locate the `toy-web-site` folder, and modify the HTML in the `index.html` file if you want. Hit refresh in your browser and see the changes.
 
