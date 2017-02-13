@@ -35,6 +35,12 @@ The line `config.vm.synced_folder "~/Documents", "/Documents"` will make all fil
 For example, if your programming stuff is located at `/Users/<your-user-name>/Documents/codist`,
 then change the line to be: `config.vm.synced_folder "~/Documents/codist", "/codist"`
 
+**NOTE** The files in this directory are shared between your mac and the VM! If you modify the file from within the VM, you 
+are modifying it on the Mac as well.  Moreover, if you delete a file in this directory, it is deleted on your Mac as well. 
+It does not go in the Mac's Trash, it is permanently deleted. With great power comes great responsibility.
+
+If you don't want to share any Mac folders with the VM, comment out the `config.vm.synced_folder` line in the `Vagrantfile`
+
 Now, examine the `bootstrap.sh` file in this directory. We use this file to install additional
 Ubuntu packages in our VM.
 
