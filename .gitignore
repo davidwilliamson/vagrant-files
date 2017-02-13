@@ -1,0 +1,6 @@
+# Editor cruft
+*~
+*.tmp
+.*.swp
+# OS cruft
+.DS_Store
